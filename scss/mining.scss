@@ -1,0 +1,19 @@
+.top-header{
+   display: flex;
+   justify-content: space-between;
+   padding-top: 50px;
+}
+.box-logo{
+   display: flex;
+   align-items: center;
+   color: $lightBlueGray;
+   font-size: 16px;
+   font-weight: 600;
+   &__img{
+      height: 28px;
+      margin-right: 10px;
+   }
+}
+.btn-logout{
+   height: 30px;
+}

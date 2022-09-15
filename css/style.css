@@ -1,0 +1,134 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito";
+}
+
+.main {
+  background: linear-gradient(#2F3956, #1D1F3E);
+  width: 100%;
+}
+
+.container {
+  border: 1px solid red;
+  max-width: 425px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.error-reg {
+  color: red;
+  text-align: center;
+  padding: 10px;
+}
+
+.form-login {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-box-logo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.login-box-logo__img {
+  height: 40px;
+  margin-right: 16px;
+}
+.login-box-logo__name {
+  color: #f5f5f5;
+  font-size: 38px;
+}
+
+.login-inpun-box {
+  position: relative;
+  margin-bottom: 16px;
+}
+.login-inpun-box__input {
+  width: 280px;
+  height: 50px;
+  padding: 10px;
+  border: 1px solid #585881;
+  background: linear-gradient(#282F4D, #242A48);
+  border-radius: 8px;
+  outline: none;
+  color: #f5f5f5;
+  font-size: 18px;
+  transition: 0.5s;
+}
+.login-inpun-box__input:focus {
+  border-color: aqua;
+}
+.login-inpun-box__input:focus ~ .login-inpun-box__span {
+  color: aqua;
+  transform: translateX(10px) translateY(-9px);
+  font-size: 14px;
+  padding: 0 10px;
+  background-color: #282F4D;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+.login-inpun-box__input:valid ~ .login-inpun-box__span {
+  color: aqua;
+  transform: translateX(10px) translateY(-9px);
+  font-size: 14px;
+  padding: 0 10px;
+  background-color: #282F4D;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+.login-inpun-box__span {
+  position: absolute;
+  left: 0;
+  padding-left: 10px;
+  padding-top: 12px;
+  font-size: 18px;
+  pointer-events: none;
+  color: #585881;
+  font-weight: 600;
+  transition: 0.5s;
+}
+
+.btn-login {
+  width: 280px;
+  height: 50px;
+  background: linear-gradient(#282F4D, #242A48);
+  border: 1px solid #585881;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #f5f5f5;
+  margin-top: 20px;
+  letter-spacing: 1px;
+  transition-duration: 0.3s;
+}
+.btn-login:hover {
+  border: 1px solid aqua;
+}
+
+.top-header {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 50px;
+}
+
+.box-logo {
+  display: flex;
+  align-items: center;
+  color: #787FB5;
+  font-size: 16px;
+  font-weight: 600;
+}
+.box-logo__img {
+  height: 28px;
+  margin-right: 10px;
+}
+
+.btn-logout {
+  height: 30px;
+}

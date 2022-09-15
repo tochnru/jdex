@@ -1,0 +1,22 @@
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: 'Nunito';
+}
+.main{
+   background: linear-gradient(#2F3956, #1D1F3E);
+   width: 100%;
+}
+.container{
+   border: 1px solid red;
+   max-width: 425px;
+   margin: 0 auto;
+   padding-left: 20px;
+   padding-right: 20px;
+}
+.error-reg{
+   color: red;
+   text-align: center;
+   padding: 10px;
+}

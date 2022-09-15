@@ -1,0 +1,84 @@
+.form-login{
+   height: 100vh;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+.login-box-logo{
+   display: flex;
+   align-items: center;
+   margin-bottom: 30px;
+   &__img{
+      height: 40px;
+      margin-right: 16px;
+   }
+   &__name{
+      color: $smokyWhite;
+      font-size: 38px;
+   }
+}
+.login-inpun-box{
+   position: relative;
+   margin-bottom: 16px;
+   &__input{
+      width: 280px;
+      height: 50px;
+      padding: 10px;
+      border: 1px solid #585881;
+      background: linear-gradient(#282F4D, #242A48);
+      border-radius: 8px;
+      outline: none;
+      color: $smokyWhite;
+      font-size: 18px;
+      transition: 0.5s;
+      &:focus{
+         border-color: aqua;
+      }
+      &:focus ~ .login-inpun-box__span{
+         color: aqua;
+         transform: translateX(10px) translateY(-9px);
+         font-size: 14px;
+         padding: 0 10px;
+         background-color: #282F4D;
+         font-weight: 400;
+         letter-spacing: 1px;
+      }
+      &:valid ~ .login-inpun-box__span{
+         color: aqua;
+         transform: translateX(10px) translateY(-9px);
+         font-size: 14px;
+         padding: 0 10px;
+         background-color: #282F4D;
+         font-weight: 400;
+         letter-spacing: 1px;
+      }
+
+   }
+   &__span{
+      position: absolute;
+      left: 0;
+      padding-left: 10px;
+      padding-top: 12px;
+      font-size: 18px;
+      pointer-events: none;
+      color: #585881;
+      font-weight: 600;
+      transition: 0.5s;
+   }
+}
+.btn-login{
+   width: 280px;
+   height: 50px;
+   background: linear-gradient(#282F4D, #242A48);
+   border: 1px solid #585881;
+   border-radius: 8px;
+   cursor: pointer;
+   color: $smokyWhite;
+   margin-top: 20px;
+   letter-spacing: 1px;
+   transition-duration: 0.3s;
+   &:hover{
+      border: 1px solid aqua;
+   }
+}
