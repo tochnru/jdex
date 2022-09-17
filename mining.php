@@ -14,6 +14,9 @@
       header("Location: index.php");
       exit();
    }
+   //Запрос предприятия
+   $query_organization = mysqli_query($connect, "SELECT * FROM `organization`");
+   $query_organization_assoc = mysqli_fetch_assoc($query_organization);
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -26,7 +29,7 @@
    <link rel="stylesheet" href="css/style.css">
    <link rel="stylesheet" href="css/fonts.css">
    <link rel="icon" href="img/global/favicon.png" type="image/png">
-   <title>ООО Восточная ГРЭ</title>
+   <title><?php echo $query_organization_assoc["name"]?></title>
 </head>
 
 <body>
@@ -35,11 +38,22 @@
          <div class="top-header">
             <div class="box-logo">
                <img class="box-logo__img" src="img/global/logo.svg" alt="">
-               <p class="box-logo__name">ООО Восточная ГРЭ</p>
+               <p class="box-logo__name"><?php echo $query_organization_assoc["name"]?></p>
             </div>
-            <a href="module/logout.php">
-               <img class="btn-logout" src="img/mining/out-icon.svg" alt="exit">
-            </a>
+            <div class="box-mining-btn">
+               <?php
+                  require "module/name-admin.php";
+                  if($query_user_assoc['login'] == $name_admin){?>
+                     <a href="add-menu.php">
+                        <img class="btn-gear" src="img/mining/gear.svg" alt="gear">
+                     </a>
+                  <?php
+                  }
+               ?>
+               <a href="module/logout.php">
+                  <img class="btn-logout" src="img/mining/out-icon.svg" alt="exit">
+               </a>
+            </div>
          </div>
       </div>
    </main>

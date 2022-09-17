@@ -8,19 +8,20 @@
    require "function.php";
 
    $login = trim($_POST["login"]);
-   echo $password = trim($_POST["password"]);
+   $password = trim($_POST["password"]);
 
-   emptyInput($login, $data_name["login"]);
-   emptyInput($password, $data_name["password"]);
+   emptyInput($login, $data_name["login"], "../index.php");
+   emptyInput($password, $data_name["password"], "../index.php");
 
    strlenLargerInput($login, $data_name["login"], 20);
    strlenLargerInput($password, $data_name["password"], 20);
 
    $query_login = mysqli_query($connect,"SELECT * FROM `users` WHERE `login` = '$login'");
    $query_login_assoc = mysqli_fetch_assoc($query_login);
-   echo $query_login_assoc["password"];
 
-   if($query_login_assoc["login"] != $login or $query_login_assoc["password"] != $password){
+   $password_decrypted = password_verify($password, $query_login_assoc["password"]);
+
+   if($query_login_assoc["login"] != $login or $password_decrypted == false){
       $_SESSION['error-reg'] = '<p class="error-reg">Ошибка: Не верный логин или пароль</p>';
       header("Location: ../index.php");
       exit();

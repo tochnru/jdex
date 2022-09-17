@@ -3,10 +3,10 @@
       "login" => "логин",
       "password" => "пароль"
    ];
-   function emptyInput($data, $data_name){
+   function emptyInput($data, $data_name, $path){
       if(empty($data)){
          $_SESSION["error-reg"] = "<p class=\"error-reg\">Введите {$data_name}</p>";
-         header("Location: ../index.php");
+         header("Location: ../{$path}");
          exit();
       }
    }

@@ -9,7 +9,7 @@
    width: 100%;
 }
 .container{
-   border: 1px solid red;
+   //border: 1px solid red;
    max-width: 425px;
    margin: 0 auto;
    padding-left: 20px;
@@ -17,6 +17,11 @@
 }
 .error-reg{
    color: red;
+   text-align: center;
+   padding: 10px;
+}
+.success-reg{
+   color: rgb(31, 226, 31);
    text-align: center;
    padding: 10px;
 }

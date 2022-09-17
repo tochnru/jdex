@@ -9,6 +9,9 @@
       header("Location: mining.php");
       exit();
    }
+   //Запрос предприятия
+   $query_organization = mysqli_query($connect, "SELECT * FROM `organization`");
+   $query_organization_assoc = mysqli_fetch_assoc($query_organization);
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -20,7 +23,7 @@
    <link rel="stylesheet" href="css/style.css">
    <link rel="stylesheet" href="css/fonts.css">
    <link rel="icon" href="img/global/favicon.png" type="image/png">
-   <title>Jdex</title>
+   <title><?php echo $query_organization_assoc["name"]?></title>
 </head>
 
 <body>
@@ -29,7 +32,7 @@
          <form class="form-login" action="module/login.php" method="post">
             <div class="login-box-logo">
                <img class="login-box-logo__img" src="img/global/logo.svg" alt="logo">
-               <p class="login-box-logo__name">Jdex</p>
+               <p class="login-box-logo__name"><?php echo $query_organization_assoc["name"]?></p>
             </div>
             <div class="login-inpun-box">
                <input class="login-inpun-box__input" type="text" required="required" maxlength="20" value="test" name="login">
