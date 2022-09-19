@@ -35,11 +35,11 @@
                <p class="login-box-logo__name"><?php echo $query_organization_assoc["name"]?></p>
             </div>
             <div class="login-inpun-box">
-               <input class="login-inpun-box__input" type="text" required="required" maxlength="20" value="test" name="login">
+               <input class="login-inpun-box__input" type="text" required="required" maxlength="20" value="admin" name="login">
                <span class="login-inpun-box__span">Логин</span>
             </div>
             <div class="login-inpun-box">
-               <input class="login-inpun-box__input" type="text" required="required" maxlength="20" value="1234" name="password">
+               <input class="login-inpun-box__input" type="text" required="required" maxlength="20" value="5555" name="password">
                <span class="login-inpun-box__span">Пароль</span>
             </div>
             <input class="btn-login" type="submit" value="ВОЙТИ" name="btn-submit">

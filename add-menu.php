@@ -70,11 +70,17 @@
                </div>
                <p class="add-menu__name">Новый пользователь</p>
             </div>
-            <div class="add-menu__btn">
+            <div class="add-menu__btn" id="btn-add-mining">
                <div class="add-menu__box-img">
                   <img class="add-menu__img" src="img/add-menu/new-mining.svg" alt="">
                </div>
                <p class="add-menu__name">Новое месторождение</p>
+            </div>
+            <div class="add-menu__btn" id="btn-add-geology">
+               <div class="add-menu__box-img">
+                  <img class="add-menu__img" src="img/add-menu/geology-data.svg" alt="">
+               </div>
+               <p class="add-menu__name">Геологические данные</p>
             </div>
             <div class="add-menu__btn">
                <div class="add-menu__box-img">
@@ -84,9 +90,9 @@
             </div>
             <div class="add-menu__btn">
                <div class="add-menu__box-img">
-                  <img class="add-menu__img" src="img/add-menu/geology-data.svg" alt="">
+                  <img class="add-menu__img" src="img/add-menu/delete-notes.svg" alt="">
                </div>
-               <p class="add-menu__name">Геологические данные</p>
+               <p class="add-menu__name">Удалить записи</p>
             </div>
          </nav>
          <!--Форма новый пользователь-->
@@ -94,7 +100,7 @@
             <form class="form-add" action="module/add-user.php" method="post">
                <h1 class="form-add__h1">Новый пользователь</h1>
                <div class="add-inpun-box">
-                  <input class="add-inpun-box__input" type="text" required="required"  maxlength="20" value="vi17s" name="login">
+                  <input class="add-inpun-box__input" type="text" required="required"  maxlength="20" value="" name="login">
                   <span class="add-inpun-box__span">Логин</span>
                </div>
                <div class="add-inpun-box">
@@ -105,27 +111,96 @@
                   <span class="add-inpun-box__span">Пароль</span>
                </div>
                <div class="add-inpun-box">
-                  <input class="add-inpun-box__input" type="text" required="required" maxlength="20" value="Иванов" name="family">
+                  <input class="add-inpun-box__input" type="text" required="required" maxlength="20" value="" name="family">
                   <span class="add-inpun-box__span">Фамилия</span>
                </div>
                <div class="add-inpun-box">
-                  <input class="add-inpun-box__input" type="text" required="required" maxlength="20" value="Сергей" name="name">
+                  <input class="add-inpun-box__input" type="text" required="required" maxlength="20" value="" name="name">
                   <span class="add-inpun-box__span">Имя</span>
                </div>
                <div class="add-inpun-box">
-                  <input class="add-inpun-box__input" type="text" required="required" maxlength="20" value="Викторович" name="patronymic">
+                  <input class="add-inpun-box__input" type="text" required="required" maxlength="20" value="" name="patronymic">
                   <span class="add-inpun-box__span">Отчество</span>
                </div>
                <div class="add-inpun-box">
-                  <input class="add-inpun-box__input" type="text" required="required" maxlength="20" value="Горняк" name="job">
+                  <input class="add-inpun-box__input" type="text" required="required" maxlength="20" value="" name="job">
                   <span class="add-inpun-box__span">Должность</span>
                </div>
                <div class="add-inpun-box">
-                  <input class="add-inpun-box__input" type="text" required="required" maxlength="20" value="Верхоянский" name="subdivision">
+                  <input class="add-inpun-box__input" type="text" required="required" maxlength="20" value="" name="subdivision">
                   <span class="add-inpun-box__span">Участок</span>
                </div>
                <input class="btn-add" type="submit" value="ЗАРЕГИСТРИРОВАТЬ" name="btn-submit">
                <div class="close-menu-add" id="close-add-user">X</div>
+            </form>
+         </div>
+         <!--Форма новое месторождение-->
+         <div class="wrapper-form-add" id="menu-add-mining">
+            <form class="form-add" action="module/add-mining.php" method="post" enctype="multipart/form-data">
+               <h1 class="form-add__h1">Новое месторождение</h1>
+               <div class="add-inpun-box">
+                  <input class="add-inpun-box__input" type="text" required="required"  maxlength="20" value="" name="name-mining">
+                  <span class="add-inpun-box__span">Название</span>
+               </div>
+               <div class="add-inpun-box">
+                  <input class="add-inpun-box__input" type="text" required="required"  maxlength="10" value="" name="name-img">
+                  <span class="add-inpun-box__span">Изображение</span>
+               </div>
+               <input class="btn-add" type="submit" value="ДОБАВИТЬ" name="btn-submit">
+               <div class="close-menu-add" id="close-add-mining">X</div>
+            </form>
+         </div>
+         <!--Форма геологические данные-->
+         <div class="wrapper-form-add" id="menu-add-geology">
+            <form class="form-add" action="module/add-geology.php" method="post" enctype="multipart/form-data">
+               <h1 class="form-add__h1">Геологические данные</h1>
+
+               <select class="add-input-select" name="mining" required="required">
+                  <option class="add-input-option" value="Выберите месторождение">Выберите месторождение</option>
+                  <?php
+                     $query_mining= mysqli_query($connect, "SELECT * FROM `mining` WHERE `archive` = 0");
+                     while($query_mining_assoc = mysqli_fetch_assoc($query_mining)){?>
+                        <option class="add-input-option" value="<?php echo $query_mining_assoc["names"]?>"><?php echo $query_mining_assoc["names"]?></option>
+                     <?php
+                     }
+                  ?>
+               </select>
+               <div class="add-inpun-box">
+                  <input class="add-inpun-box__input" type="text" required="required"  maxlength="20" value="" name="block">
+                  <span class="add-inpun-box__span">Блок</span>
+               </div>
+               <div class="add-inpun-box">
+                  <input class="add-inpun-box__input" type="text" required="required"  maxlength="10" value="" name="area">
+                  <span class="add-inpun-box__span">Площадь</span>
+               </div>
+               <div class="add-inpun-box">
+                  <input class="add-inpun-box__input" type="text" required="required"  maxlength="10" value="" name="power-pesok">
+                  <span class="add-inpun-box__span">Мощность песков</span>
+               </div>
+               <div class="add-inpun-box">
+                  <input class="add-inpun-box__input" type="text" required="required"  maxlength="10" value="" name="power-torf">
+                  <span class="add-inpun-box__span">Мощность торфов</span>
+               </div>
+               <div class="add-inpun-box">
+                  <input class="add-inpun-box__input" type="text" required="required"  maxlength="10" value="" name="volume-pesok">
+                  <span class="add-inpun-box__span">Объем песков</span>
+               </div>
+               <div class="add-inpun-box">
+                  <input class="add-inpun-box__input" type="text" required="required"  maxlength="10" value="" name="volume-torf">
+                  <span class="add-inpun-box__span">Объем торфов</span>
+               </div>
+               <div class="add-inpun-box">
+                  <input class="add-inpun-box__input" type="text" required="required"  maxlength="10" value="" name="soderzhaniye">
+                  <span class="add-inpun-box__span">Содержание</span>
+               </div>
+               <div class="add-inpun-box">
+                  <input class="add-inpun-box__input" type="text" required="required"  maxlength="10" value="" name="gold">
+                  <span class="add-inpun-box__span">Запасы золота</span>
+               </div>
+
+
+               <input class="btn-add" type="submit" value="ДОБАВИТЬ" name="btn-submit">
+               <div class="close-menu-add" id="close-add-geology">X</div>
             </form>
          </div>
       </div>

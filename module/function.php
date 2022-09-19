@@ -1,7 +1,8 @@
 <?php
    $data_name = [
       "login" => "логин",
-      "password" => "пароль"
+      "password" => "пароль",
+      "mining" => "месторождение",
    ];
    function emptyInput($data, $data_name, $path){
       if(empty($data)){
