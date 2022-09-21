@@ -82,7 +82,7 @@
                </div>
                <p class="add-menu__name">Геологические данные</p>
             </div>
-            <div class="add-menu__btn">
+            <div class="add-menu__btn" id="btn-add-fact">
                <div class="add-menu__box-img">
                   <img class="add-menu__img" src="img/add-menu/document.svg" alt="">
                </div>
@@ -152,7 +152,7 @@
          </div>
          <!--Форма геологические данные-->
          <div class="wrapper-form-add" id="menu-add-geology">
-            <form class="form-add" action="module/add-geology.php" method="post" enctype="multipart/form-data">
+            <form class="form-add" action="module/add-geology.php" method="post">
                <h1 class="form-add__h1">Геологические данные</h1>
 
                <select class="add-input-select" name="mining" required="required">
@@ -201,6 +201,25 @@
 
                <input class="btn-add" type="submit" value="ДОБАВИТЬ" name="btn-submit">
                <div class="close-menu-add" id="close-add-geology">X</div>
+            </form>
+         </div>
+         <!--Форма данные добычи-->
+         <div class="wrapper-form-add" id="menu-add-fact">
+            <form class="form-add" action="add-bloc-fact.php" method="post">
+               <h1 class="form-add__h1">Данные добычи</h1>
+
+               <select class="add-input-select" name="mining-fact" required="required">
+                  <option class="add-input-option" value="Выберите месторождение">Выберите месторождение</option>
+                  <?php
+                     $query_mining= mysqli_query($connect, "SELECT * FROM `mining` WHERE `archive` = 0");
+                     while($query_mining_assoc = mysqli_fetch_assoc($query_mining)){?>
+                        <option class="add-input-option" value="<?php echo $query_mining_assoc["names"]?>"><?php echo $query_mining_assoc["names"]?></option>
+                     <?php
+                     }
+                  ?>
+               </select>
+               <input class="btn-add" type="submit" value="ДОБАВИТЬ" name="btn-submit">
+               <div class="close-menu-add" id="close-add-fact">X</div>
             </form>
          </div>
       </div>

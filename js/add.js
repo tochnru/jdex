@@ -31,3 +31,14 @@ btnAddGeology.onclick = function(){
 closeAddGeology.onclick = function(){
    menuAddGeology.style.display = "none";
 }
+//Меню добавления фактических данных
+let menuAddFact = document.querySelector("#menu-add-fact");
+let btnAddFact = document.querySelector("#btn-add-fact");
+let closeAddFact = document.querySelector("#close-add-fact");
+
+btnAddFact.onclick = function(){
+   menuAddFact.style.display = "block";
+}
+closeAddFact.onclick = function(){
+   menuAddFact.style.display = "none";
+}
