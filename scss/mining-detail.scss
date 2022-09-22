@@ -1,0 +1,100 @@
+.header-detail{
+   display: flex;
+   align-items: center;
+   background-color: $nightBlue;
+   border-radius: 34px;
+   height: 200px;
+   margin-top: 50px;
+}
+.gold-detail{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   padding-top: 24px;
+   width: 120px;
+   height: 100%;
+   background-color: #323a69;
+   border-radius: 34px;
+   color: #f5f5f5;
+   box-shadow: 11px 0px 17px 0px rgba(6, 20, 54, 0.7);
+   &__top{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 50px;
+      height: 50px;
+      border: 3px solid #F36F46;
+      border-radius: 18px;
+      font-size: 22px;
+      margin-bottom: 10px;
+   }
+   &__data-gold{
+      padding-top: 10px;
+      font-size: 24px;
+   }
+   &__data-txt{
+      font-size: 20px;
+   }
+}
+.chart-detail{
+   padding-left: 30px;
+   padding-right: 20px;
+   width: calc(100% - 120px);
+   &__name-mining{
+      color: $smokyWhite;
+      font-size: 26px;
+   }
+   &__type-mining{
+      text-transform: uppercase;
+      color: $smokyWhite;
+      font-size: 12px;
+      letter-spacing: 1px;
+      padding-bottom: 20px;
+   }
+}
+.box-chart{
+   display: flex;
+   width: 100%;
+   &__bar{
+      width: 18px;
+      height: 80px;
+      margin-right: 10px;
+      border-radius: 5px;
+      background-color: #323a69;
+   }
+}
+.table-detail{
+   margin-top: 50px;
+   padding-bottom: 50px;
+   &__header{
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      height: 40px;
+      color: $smokyWhite;
+      border-bottom: 1px solid $smokyWhite;
+      font-weight: 600;
+   }
+   &__string{
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      height: 40px;
+      color: $smokyWhite;
+   }
+   &__footer{
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      height: 40px;
+      color: $smokyWhite;
+      border-top: 1px solid $smokyWhite;
+      font-weight: 600;
+   }
+   &__data{
+      //border: 1px solid fuchsia;
+      width: 66px;
+      text-align: center;
+      font-size: 14px;
+   }
+}

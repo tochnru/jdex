@@ -48,7 +48,7 @@
    }
 
    //Запись в БД
-   $insert_geology= mysqli_query($connect, "INSERT INTO `data_geology` (`mining`, `block`, `area`, `power_pesok`, `power_torf`, `volume_pesok`, `volume_torf`, `soderzhaniye`, `gold`) VALUES ( '$mining', '$block', '$area', '$power_pesok', '$power_torf', '$volume_pesok', '$volume_torf', '$soderzhaniye', '$gold')");
+   $insert_geology= mysqli_query($connect, "INSERT INTO `data_geology` (`mining`, `block`, `area`, `power_pesok`, `power_torf`, `volume_pesok`, `volume_torf`, `soderzhaniye`, `gold`, `archive`) VALUES ( '$mining', '$block', '$area', '$power_pesok', '$power_torf', '$volume_pesok', '$volume_torf', '$soderzhaniye', '$gold', 0)");
    $_SESSION["success-reg"] = '<p class="success-reg">Блок добавлен</p>';
    header("Location: ../add-menu.php");
 ?>

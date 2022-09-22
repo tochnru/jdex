@@ -21,3 +21,126 @@
    height: 28px;
    margin-right: 10px;
 }
+.mining-menu{
+   padding-top: 50px;
+}
+.mining-link{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   height: 60px;
+   text-decoration: none;
+   color: $smokyWhite;
+   &__img{
+      width: 30px;
+   }
+   &__name{
+      width: 200px;
+   }
+   &__data-gold{
+      width: 80px;
+      text-align: right;
+   }
+}
+.box-total{
+   padding-top: 70px;
+   display: flex;
+   justify-content: space-between;
+}
+.mining-total{
+   width: 170px;
+   height: 250px;
+   border-radius: 50px;
+   background: $nightBlue;
+   &__line{
+      width: 6px;
+      height: 130px;
+      margin-top: -30px;
+      margin-left: 40px;
+      border-radius: 3px;
+   }
+   &__line--green{
+      background-color: #19D27E;
+      box-shadow: -2px 0px 10px 0px #19D27E;
+   }
+   &__line--red{
+      background-color: #FF4982;
+      box-shadow: -2px 0px 10px 0px #FF4982;
+   }
+   &__data{
+      text-align: center;
+      color: $smokyWhite;
+      font-size: 20px;
+      padding-top: 20px;
+   }
+   &__name{
+      text-align: center;
+      padding-top: 30px;
+      color: $lightBlueGray;
+   }
+}
+//Слайдер
+.header-article{
+   color: $smokyWhite;
+   padding-top: 70px;
+   font-size: 18px;
+   font-weight: 600;
+}
+.event-slider{
+   overflow: hidden;
+   position: relative;
+   padding-bottom: 40px;
+   margin-top: 20px;
+}
+.event-slide{
+   height: 190px;
+   border-radius: 40px;
+   padding: 20px;
+   display: flex;
+   align-items: center;
+   background-color: $nightBlue;
+   &__img{
+      height: 80px;
+   }
+   &__content{
+      padding-left: 10px;
+   }
+   &__header{
+      color: $smokyWhite;
+      font-weight: 700;
+      padding-bottom: 5px;
+   }
+   &__txt{
+      font-size: 14px;
+      color: $lightBlueGray;
+   }
+}
+.swiper-button-next{
+   height: 20px;
+   width: 20px;
+   border: 1px solid $smokyWhite;
+   border-radius: 50%;
+   top: 220px;
+   right: 38%;
+   z-index: 15;
+   &::after{
+      font-size: 10px;
+      color: #9da9eb;
+   }
+}
+.swiper-button-prev{
+   height: 20px;
+   width: 20px;
+   border: 1px solid $smokyWhite;
+   border-radius: 50%;
+   top: 220px;
+   left: 38%;
+   z-index: 15;
+   &::after{
+      font-size: 10px;
+      color: #9da9eb;
+   }
+}
+.swiper-pagination{
+   color: #9da9eb;
+}
